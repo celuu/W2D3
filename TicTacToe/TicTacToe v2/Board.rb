@@ -1,6 +1,6 @@
 class Grid
-    def initialize
-        @grid = Array.new(3){Array.new(3, "_")}
+    def initialize(n)
+        @grid = Array.new(n){Array.new(n, "_")}
     end
 
     def [](position)
@@ -14,10 +14,10 @@ class Grid
     end
 
     def valid?(position)
-        if row < 0 || row > 2
+        if row < 0 || row > @grid.length-1
             return false
         end
-        if column < 0 || column > 2
+        if column < 0 || column > @grid.length-1
             return false
         end
         true
